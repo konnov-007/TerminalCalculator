@@ -2,7 +2,8 @@
 #include <stdlib.h>
 #include <math.h>
 
-int factorial(double n){
+int factorial(double n)
+{
 	if(n<=1) printf("=1\n\n"); 
 	else{
 	double n1=n;
@@ -13,7 +14,9 @@ return n;
 }
 
 
-main(){
+
+void calculator()
+{
 	double a, b, equals=0;
 	char action;
 	
@@ -62,8 +65,14 @@ main(){
 	}
 	answer:;	printf("=%.3lf \n\n", equals);
 }
-
 }
+}
+
+
+
+
+main(){
+	calculator();
 	return 0;
 	
 } 
