@@ -19,51 +19,48 @@ void calculator()
 {
 	double a, b, equals=0;
 	char action;
-	
 	printf("Welcome to calculator. Supported operations: addition, subtraction, multiplication, division, exponentiation, factorial.\nInput number, action, another number:\n\n");
 	
 	while(true){
-		scanf("%lf %c", &a, &action);
+		scanf("%lf %c", &a, &action); //input first number then operation
 	
-		if(action=='!')
+		if(action=='!') //factorial
 		{
 		equals = factorial(a);  
 		goto answer;
 		}
 		
-		scanf("%lf", &b);
+		scanf("%lf", &b); // input second number
 		
-		if(a>0&&action=='/'&&b==0) printf("+infinity\n\n");
-		
-		else if(a<0&&action=='/'&&b==0) printf("-infinity\n\n");
-		
-		else if(a==0&&action=='/'&&b==0) printf("Undefined\n\n");
+		if(a>0&&action=='/'&&b==0) printf("+infinity\n\n");	//
+		else if(a<0&&action=='/'&&b==0) printf("-infinity\n\n"); //   terms of division by zero
+		else if(a==0&&action=='/'&&b==0) printf("Undefined\n\n"); //
 		
 		else{
 	switch(action){
-	case '+': {
+	case '+': { //plus action
 		equals=a+b;
 		break;
 	}
-	case '-': {
+	case '-': { //minus action
 		equals=a-b;
 		break;
 	}
-	case '*': {
+	case '*': { //multiply action
 		equals=a*b;
 		break;
 	}
-	case '/': {
+	case '/': { //devide action
 		equals=a/b;
 		break;
 	}
-	case '^':{
-		equals=powf(a,b);//do{a*=a; equals=a; b--;}while(b>1.1);
+	case '^':{ //raised to the power
+		equals=powf(a,b);
 		break;	
 	}
 	default:break;
 	}
-	answer:;	printf("=%.3lf \n\n", equals);
+	answer:;	printf("=%.3lf \n\n", equals); //answer output
 }
 }
 }
